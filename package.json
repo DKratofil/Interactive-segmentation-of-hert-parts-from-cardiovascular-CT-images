@@ -4,7 +4,11 @@
   "description": "vtk.js app",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack --progress --colors --mode development",
+    "build:release": "webpack --progress --colors --mode production",
+    "start": "webpack-dev-server --content-base ./dist",
+    "commit": "git cz",
+    "semantic-release": "semantic-release"
   },
   "keywords": [
     "Web",
@@ -15,17 +19,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^9.0.2",
+    "style-loader": "^1.2.1",
     "vtk.js": "^14.5.2"
   },
   "devDependencies": {
+    "css-loader": "^3.6.0",
+    "img-loader": "^3.0.1",
     "kw-web-suite": "^10.0.0"
-  },
-  "scripts": {
-    "build": "webpack --progress --colors --mode development",
-    "build:release": "webpack --progress --colors --mode production",
-    "start": "webpack-dev-server --content-base ./dist",
-
-    "commit": "git cz",
-    "semantic-release": "semantic-release"
   }
 }
